@@ -68,10 +68,29 @@
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
  }
 
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.galeria img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+
  @media (max-width: 768px) {
    .contenido {
      grid-template-columns: 1fr;
    }
+
+  .galeria {
+    grid-template-columns: 1fr;
+  }
  }
 
  #portada {
@@ -80,3 +99,54 @@
    border-radius: 8px;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
  }
+
+.imagen-ampliable {
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+
+.imagen-ampliable.ampliada {
+  transform: scale(1.75);
+  cursor: zoom-out;
+  position: relative;
+  z-index: 5;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th {
+  background-color: #2f5d3a;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table tr:hover {
+  background-color: #f9f9f9;
+}
+
+footer {
+  text-align: center;
+  padding: 12px 0;
+  background-color: #2f5d3a;
+  color: #fff;
+  margin-top: 20px;
+}
