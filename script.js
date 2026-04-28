@@ -1,6 +1,24 @@
 // Selecciona todas las etiquetas <img> del documento y guarda la lista en una constante.
 // `querySelectorAll` devuelve un NodeList (parecido a un arreglo) con todas las imágenes encontradas.
 const imagenes = document.querySelectorAll("img");
+const CLAVE_MODO_OSCURO = "modoOscuroActivo";
+
+const modoOscuroGuardado = localStorage.getItem(CLAVE_MODO_OSCURO) === "true";
+if (modoOscuroGuardado) {
+  document.body.classList.add("modo-oscuro");
+}
+
+function alternarModoOscuro() {
+  document.body.classList.toggle("modo-oscuro");
+  const modoOscuroActivo = document.body.classList.contains("modo-oscuro");
+  localStorage.setItem(CLAVE_MODO_OSCURO, String(modoOscuroActivo));
+}
+
+const botonContacto = document.getElementById("contacto");
+
+if (botonContacto) {
+  botonContacto.addEventListener("click", alternarModoOscuro);
+}
 
 // Recorre cada imagen para prepararla como "ampliable" al hacer clic.
 imagenes.forEach((imagen) => {

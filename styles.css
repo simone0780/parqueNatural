@@ -31,11 +31,29 @@
    padding: 16px;
  }
 
- #bienvenida p {
+ #contacto {
    margin: 12px 0;
+  width: 100%;
+  display: block;
+  padding: 10px 12px;
+  border: 2px solid #2f5d3a;
+  border-radius: 6px;
+  background-color: #f7fbf4;
+  color: #1f3f28;
+  text-decoration: none;
+  font-weight: 600;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+#bienvenida p {
+  margin: 12px 0;
  }
 
- #bienvenida a {
+ #bienvenida a,
+ #contacto {
    display: block;
    padding: 10px 12px;
    border: 2px solid #2f5d3a;
@@ -47,7 +65,8 @@
    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
  }
 
- #bienvenida a:hover {
+#bienvenida a:hover,
+#contacto:hover {
    background-color: #2f5d3a;
    color: #ffffff;
    transform: translateX(3px);
@@ -68,29 +87,29 @@
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
  }
 
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 16px;
-}
+ .galeria {
+   display: grid;
+   grid-template-columns: repeat(2, minmax(0, 1fr));
+   gap: 16px;
+   margin-top: 16px;
+ }
 
-.galeria img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 14px;
-  display: block;
-}
+ .galeria img {
+   width: 100%;
+   aspect-ratio: 4 / 3;
+   object-fit: cover;
+   border-radius: 14px;
+   display: block;
+ }
 
  @media (max-width: 768px) {
    .contenido {
      grid-template-columns: 1fr;
    }
 
-  .galeria {
-    grid-template-columns: 1fr;
-  }
+   .galeria {
+     grid-template-columns: 1fr;
+   }
  }
 
  #portada {
@@ -100,53 +119,93 @@
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
  }
 
-.imagen-ampliable {
-  cursor: zoom-in;
-  transition: transform 0.25s ease;
-}
+ .imagen-ampliable {
+   cursor: zoom-in;
+   transition: transform 0.25s ease;
+ }
 
-.imagen-ampliable.ampliada {
-  transform: scale(1.75);
-  cursor: zoom-out;
-  position: relative;
-  z-index: 5;
-}
+ .imagen-ampliable.ampliada {
+   transform: scale(1.75);
+   cursor: zoom-out;
+   position: relative;
+   z-index: 5;
+ }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 24px 0;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  overflow: hidden;
-}
+ table {
+   width: 100%;
+   border-collapse: collapse;
+   margin: 24px 0;
+   background-color: #fff;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+   border-radius: 8px;
+   overflow: hidden;
+ }
 
-table th {
-  background-color: #2f5d3a;
-  color: #fff;
-  padding: 12px;
-  text-align: left;
-  font-weight: 600;
-}
+ table th {
+   background-color: #2f5d3a;
+   color: #fff;
+   padding: 12px;
+   text-align: left;
+   font-weight: 600;
+ }
 
-table td {
-  padding: 12px;
-  border-bottom: 1px solid #e0e0e0;
-}
+ table td {
+   padding: 12px;
+   border-bottom: 1px solid #e0e0e0;
+ }
 
-table tr:last-child td {
-  border-bottom: none;
-}
+ table tr:last-child td {
+   border-bottom: none;
+ }
 
-table tr:hover {
-  background-color: #f9f9f9;
-}
+ table tr:hover {
+   background-color: #f9f9f9;
+ }
 
-footer {
-  text-align: center;
-  padding: 12px 0;
-  background-color: #2f5d3a;
-  color: #fff;
-  margin-top: 20px;
-}
+ footer {
+   text-align: center;
+   padding: 12px 0;
+   background-color: #2f5d3a;
+   color: #fff;
+   margin-top: 20px;
+ }
+
+ body.modo-oscuro {
+   background-color: #121212;
+   color: #f1f1f1;
+ }
+
+ body.modo-oscuro #titulo,
+ body.modo-oscuro footer,
+ body.modo-oscuro table th {
+   background-color: #1f1f1f;
+   color: #f1f1f1;
+ }
+
+ body.modo-oscuro #bienvenida,
+ body.modo-oscuro #sierra-cazorla,
+ body.modo-oscuro table {
+   background-color: #222;
+   color: #f1f1f1;
+ }
+
+ body.modo-oscuro #bienvenida a,
+ body.modo-oscuro #contacto {
+   background-color: #2b2b2b;
+   color: #f1f1f1;
+   border-color: #8fb996;
+ }
+
+ body.modo-oscuro #bienvenida a:hover,
+ body.modo-oscuro #contacto:hover {
+   background-color: #8fb996;
+   color: #111;
+ }
+
+ body.modo-oscuro table td {
+   border-bottom: 1px solid #444;
+ }
+
+ body.modo-oscuro table tr:hover {
+   background-color: #2d2d2d;
+ }
