@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+          .classe1 { color:rgb(255, 0, 0);}
+
+</style>
+</head>
+<body>
+    <h1 id="eltitulo">mi web</h1>
+    <h2 id="fuerte">fuerte</h2>
+<button onClick="hacerCosas()">Púlsame</button>
+<script>
+
+
+    h1 =document.getElementById("eltitulo")
+
+h1.innerText= "MI WEB 4.0"
+
+
+h2 = document.getElementById("fuerte");
+h2.innerText= "perro"
+h1.classList.add("classe1");
+h1.style.fontSize = "90px";
+h1.style.coor = "green";
+
+function hacerCosas(){
+   h1.style.color= "blue"
+}
+
+</script>
+</body>
+</html>
